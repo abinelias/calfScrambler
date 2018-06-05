@@ -1,0 +1,183 @@
+﻿<div class="container demo">
+    <div class="row">
+        <div class="col-md-11">
+            <div class="panel panel-default" ng-if="!home.isEdit">
+                <div class="panel-heading">Panel Heading</div>
+                <div class="panel-body">
+                    <div class="row">
+                        <div class="col-md-2 col-xs-2 col-sm-2" >
+                            Name: 
+                        </div>
+                        <div class="col-md-4 col-xs-4 col-sm-4" style="text-align:left; padding-left:10px;">
+                            {{home.name}}
+                        </div>
+                        <div class="col-md-2 col-xs-2 col-sm-2">
+                            Address:
+                        </div>
+                        <div class="col-md-4 col-xs-4 col-sm-4" style="text-align:left; padding-left:10px;">
+                            {{home.address}}
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="panel-group" id="accordion" ng-if="home.isEdit" role="tablist" aria-multiselectable="true">
+                <div class="panel panel-default">
+                    <div class="panel-heading" role="tab" id="headingOne">
+                        <h4 class="panel-title">
+                            <a role="button" data-toggle="collapse" data-parent="#accordion" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                <i class="more-less glyphicon glyphicon-plus"></i>
+                                Scrambler Information
+                            </a>
+                        </h4>
+                    </div>
+                    <div id="collapseOne" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">
+                        <div class="panel-body">
+                            <table style="width:80%" class="table borderless">
+                                <tbody>
+                                    <tr>
+                                        <td style="text-align:right">Name:</td>
+                                        <td><input type="text" class="form-control" ng-model="home.scramblerDetails.FIRST_NAME" style="padding-left:20px;" /></td>
+                                        <td style="text-align:right">Email:</td>
+                                        <td><input type="text" class="form-control" style="padding-left:20px" /></td>
+                                    </tr>
+                                    <tr>
+                                        <td style="text-align:right">Address:</td>
+                                        <td><input type="text" class="form-control" style="padding-left:20px" /></td>
+                                        <td style="text-align:right">Secondary Email:</td>
+                                        <td><input type="text" class="form-control" style="padding-left:20px" /></td>
+                                    </tr>
+                                    <tr>
+                                        <td style="text-align:right">City:</td>
+                                        <td><input type="text" class="form-control" style="padding-left:20px" /></td>
+                                        <td style="text-align:right">Chapter:</td>
+                                        <td><input type="text" class="form-control" style="padding-left:20px" /></td>
+                                    </tr>
+                                    <tr>
+                                        <td style="text-align:right">State:</td>
+                                        <td>
+                                            <select style="padding-left:20px;" class="form-control" ng-model="home.selectedState" ng-options="state.Id as state.Name for state in home.state"></select>
+                                        </td>
+                                        <td style="text-align:right">CEA or AST:</td>
+                                        <td><input type="text" class="form-control" style="padding-left:20px" /></td>
+                                    </tr>
+                                    <tr>
+                                        <td style="text-align:right">ZIP:</td>
+                                        <td><input type="text" class="form-control" style="padding-left:20px" /></td>
+                                        <td style="text-align:right">CEA or AST Email:</td>
+                                        <td><input type="text" class="form-control" style="padding-left:20px" /></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+                <div class="panel panel-default">
+                    <div class="panel-heading" role="tab" id="headingTwo">
+                        <h4 class="panel-title">
+                            <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                                <i class="more-less glyphicon glyphicon-plus"></i>
+                                Additional Information
+                            </a>
+                        </h4>
+                    </div>
+                    <div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
+                        <div class="panel-body">
+                            <table class="table borderless" style="width:65%">
+                                <tbody>
+                                    <tr>
+                                        <td style="text-align:right">Animal Type:</td>
+                                        <td>
+                                            <select style="padding-left:20px;" class="form-control" ng-model="home.selectedAnimalType" ng-options="animalType.Id as animalType.Name for animalType in home.animalType"></select>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td style="text-align:right">Animal:</td>
+                                        <td><input type="text" class="form-control" style="padding-left:20px; padding-right:100px" /></td>
+                                    </tr>
+                                    <tr>
+                                        <td style="text-align:right">Breed:</td>
+                                        <td>
+                                            <select style="padding-left:20px;" class="form-control" ng-model="home.selectedBreed" ng-options="breed.Id as breed.Name for breed in home.breed"></select>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td style="text-align:right">Birth Date:</td>
+                                        <td><input type="text" class="form-control" style="padding-left:20px; padding-right:100px" /></td>
+                                    </tr>
+                                    <tr>
+                                        <td style="text-align:right">Seller:</td>
+                                        <td><input type="text" class="form-control" style="padding-left:20px; padding-right:100px" /></td>
+                                    </tr>
+                                    <tr>
+                                        <td style="text-align:right">Purchase Date:</td>
+                                        <td><input type="text" class="form-control" style="padding-left:20px; padding-right:100px" /></td>
+                                    </tr>
+                                    <tr>
+                                        <td style="text-align:right">Total Animal Cost:</td>
+                                        <td><input type="text" class="form-control" style="padding-left:20px; padding-right:100px" /></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+                <div class="panel panel-default">
+                    <div class="panel-heading" role="tab" id="headingThree">
+                        <h4 class="panel-title">
+                            <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                                <i class="more-less glyphicon glyphicon-plus"></i>
+                                Donor Information
+                            </a>
+                        </h4>
+                    </div>
+                    <div id="collapseThree" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree">
+                        <div class="panel-body">
+                            <table class="table borderless" style="width:65%">
+                                <tbody>
+                                    <tr>
+                                        <td style="text-align:right">Donor name:</td>
+                                        <td><input type="text" class="form-control" style="padding-left:20px; width:200px;" /></td>
+                                    </tr>
+                                    <tr>
+                                        <td style="text-align:right">Donor Email:</td>
+                                        <td><input type="text" class="form-control" style="padding-left:20px; width:200px;" /></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+                <div class="panel panel-default">
+                    <div class="panel-heading" role="tab" id="headingThree">
+                        <h4 class="panel-title">
+                            <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" data-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+                                <i class="more-less glyphicon glyphicon-plus"></i>
+                                Calf Scramble Progress Show – Month DD, YYYY
+                            </a>
+                        </h4>
+                    </div>
+                    <div id="collapseFour" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree">
+                        <div class="panel-body">
+                            <table class="table borderless" style="width:65%">
+                                <tbody>
+                                    <tr>
+                                        <td style="text-align:right">Will you attend the Calf scrambling progress show:</td>
+                                        <td><select style="padding-left:20px;" class="form-control" ng-model="home.selectedAttending" ng-options="attending.Id as attending.Name for attending in home.attending"></select></td>
+                                    </tr>
+                                    <tr>
+                                        <td style="text-align:right">T-Shirt Size:</td>
+                                        <td>
+                                            <select style="padding-left:20px;" class="form-control" ng-model="home.selectedTShirtSize" ng-options="tShirtSize.Id as tShirtSize.Name for tShirtSize in home.tShirtSize"></select>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+                <button type="button" style="margin-top: 25px;" class="btn btn-success center-block">Save</button>
+            </div>
+        </div>
+    </div>
+
+</div><!-- container -->

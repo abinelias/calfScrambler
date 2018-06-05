@@ -1,0 +1,111 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://ajax.aspnetcdn.com/ajax/modernizr/modernizr-2.8.3.js"></script>
+    <script src="https://code.jquery.com/jquery-1.9.1.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.10.3/jquery-ui.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+    <script src="https://unpkg.com/igniteui-angularjs@1.2.1/igniteui-angularjs.min.js"></script>
+    <link href="https://cdn-na.infragistics.com/igniteui/2018.1/latest/css/themes/infragistics/infragistics.theme.css" rel="stylesheet">
+    <link href="https://cdn-na.infragistics.com/igniteui/2018.1/latest/css/structure/infragistics.css" rel="stylesheet">
+    <link href="//netdna.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <script src="//netdna.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+
+
+
+    <script src="https://igniteui.github.io/help-samples/js/FileSaver.js"></script>
+    <script src="https://igniteui.github.io/help-samples/js/Blob.js"></script>
+
+    <!-- Ignite UI Required Combined JavaScript Files -->
+    <script type="text/javascript" src="http://cdn-na.infragistics.com/igniteui/2017.1/latest/js/infragistics.core.js"></script>
+    <script type="text/javascript" src="http://cdn-na.infragistics.com/igniteui/2017.1/latest/js/infragistics.lob.js"></script>
+    <script type="text/javascript" src="http://cdn-na.infragistics.com/igniteui/2017.1/latest/js/modules/infragistics.ext_core.js"></script>
+    <script type="text/javascript" src="http://cdn-na.infragistics.com/igniteui/2017.1/latest/js/modules/infragistics.ext_collections.js"></script>
+    <script type="text/javascript" src="http://cdn-na.infragistics.com/igniteui/2017.1/latest/js/modules/infragistics.ext_text.js"></script>
+    <script type="text/javascript" src="http://cdn-na.infragistics.com/igniteui/2017.1/latest/js/modules/infragistics.ext_io.js"></script>
+    <script type="text/javascript" src="http://cdn-na.infragistics.com/igniteui/2017.1/latest/js/modules/infragistics.ext_ui.js"></script>
+    <script type="text/javascript" src="http://cdn-na.infragistics.com/igniteui/2017.1/latest/js/modules/infragistics.documents.core_core.js"></script>
+    <script type="text/javascript" src="http://cdn-na.infragistics.com/igniteui/2017.1/latest/js/modules/infragistics.ext_collectionsextended.js"></script>
+    <script type="text/javascript" src="http://cdn-na.infragistics.com/igniteui/2017.1/latest/js/modules/infragistics.excel_core.js"></script>
+    <script type="text/javascript" src="http://cdn-na.infragistics.com/igniteui/2017.1/latest/js/modules/infragistics.ext_threading.js"></script>
+    <script type="text/javascript" src="http://cdn-na.infragistics.com/igniteui/2017.1/latest/js/modules/infragistics.ext_web.js"></script>
+    <script type="text/javascript" src="http://cdn-na.infragistics.com/igniteui/2017.1/latest/js/modules/infragistics.xml.js"></script>
+    <script type="text/javascript" src="http://cdn-na.infragistics.com/igniteui/2017.1/latest/js/modules/infragistics.documents.core_openxml.js"></script>
+    <script type="text/javascript" src="http://cdn-na.infragistics.com/igniteui/2017.1/latest/js/modules/infragistics.excel_serialization_openxml.js"></script>
+    <script type="text/javascript" src="http://cdn-na.infragistics.com/igniteui/2017.1/latest/js/modules/infragistics.gridexcelexporter.js"></script>
+
+    <script src="http://cdn-na.infragistics.com/igniteui/2017.1/latest/js/extensions/igniteui-angular.js"></script>
+
+
+
+
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular-route.js"></script>
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+    <link href="~/CalfScramblerApp/CSS/Common.css" rel="stylesheet" />
+    <script src="~/CalfScramblerApp/Scripts/Routing.js"></script>
+    <script src="~/CalfScramblerApp/HomePage/HomeController.js"></script>
+    <script src="~/CalfScramblerApp/ExpensePage/ExpenseController.js"></script>
+    <script src="~/CalfScramblerApp/HomePage/HomeService.js"></script>
+</head>
+
+
+<body>
+    @RenderBody()
+    <div ng-app="calfScamblerApp">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-md-3">
+                    <div class="nav-side-menu">
+                        <div class="brand">Brand Logo</div>
+                        <i class="fa fa-bars fa-2x toggle-btn" data-toggle="collapse" data-target="#menu-content"></i>
+                        <div class="menu-list">
+                            <ul id="menu-content" class="menu-content collapse out">
+                                <li>
+                                    <a href="#!home">
+                                        <i class="fa fa-dashboard fa-md"></i> Home
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#!expenses">
+                                        <i class="fa fa-dashboard fa-md"></i> Expenses
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        <i class="fa fa-dashboard fa-md"></i> Correspondence
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        <i class="fa fa-dashboard fa-md"></i> Essays And Business Plan
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        <i class="fa fa-dashboard fa-md"></i> Summary
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-9">
+                    <div class="row">
+                        <div class="col-md-12" style="height: 75px;">
+                            <label style="margin-top: 15px;font-size: 27px;">Calf Scrambler App</label>
+                            <label style="float: right;margin-top: 24px;">Welcome Abin Abraham</label>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="panel panel-default">
+                            <div class="panel-body"><ng-view></ng-view></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

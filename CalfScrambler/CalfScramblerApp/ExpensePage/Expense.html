@@ -1,0 +1,80 @@
+﻿<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="panel panel-default">
+                <div class="panel-heading" style="font-size: 20px;padding: 10px;color: blue;">Monthly Expense Reporting - Month</div>
+                <div class="panel-body">
+                    <div class="panel panel-default">
+                        <div class="panel-heading" style="font-size: 20px;padding: 10px;color: dimgray;">Reporting Cycle: Enter from MMM 11 to MMM 10.</div>
+                        <div class="panel-body">
+                            Enter expense, quantity and unit cost, then click "Add Expense…" To change an expense, delete and re-enter. Additional expenses can be added for this month until the reporting cycle changes.If the purchase price of the animal is more than the value of the certificate, the extra amount paid should be reflected as an expense the month that it was paid. Grain and hay fed to the calf should be charged at the prevailing rate. Native pasture should be charged at the rate of $10.00 per month and planted pasture at the rate of $12.00 per month.
+                        </div>
+                    </div>
+                    <div class="modal fade" id="addExpenseModal" role="dialog">
+                        <div class="modal-dialog">
+
+                            <!-- Modal content-->
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                    <h4 class="modal-title">Add Expense</h4>
+                                </div>
+                                <div class="modal-body">
+                                    <div class="row">
+                                        <div class="col-md-10">
+                                            <input type="text" placeholder="Expense Type" ng-model="expense.expenseType" class="form-control" />
+                                        </div>
+                                    </div>
+                                    <div class="row" style="margin-top:10px;">
+                                        <div class="col-md-10">
+                                            <select class="form-control" ng-model="expense.selectedQuanity" ng-options="quantity.Id as quantity.Name for quantity in expense.quantity"></select>
+                                        </div>
+                                    </div>
+                                    <div class="row" style="margin-top:10px;">
+                                        <div class="col-md-10">
+                                            <input type="text" placeholder="Unit Cost" ng-model="expense.unitCost" class="form-control" />
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" ng-click="expense.saveExpense()" class="btn btn-default" data-dismiss="modal">Save</button>
+                                    <button type="button" class="btn btn-default" ng-click="expense.cancelExpense()" data-dismiss="modal">Cancel</button>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                    <div class="panel panel-default">
+                        <div class="panel-heading" style="font-size: 20px;padding: 10px;color: dimgray;">Reporting Cycle: Enter from MMM 11 to MMM 10. <button style="float:right" type="button" class="btn btn-info btn-md" data-toggle="modal" data-target="#addExpenseModal">Add Expense</button></div>
+                        <div class="panel-body">
+                            <ig-grid  data-source="expense.monthlyData" data-source-type="json" width="100%" auto-commit="true" auto-generate-columns="false">
+                                <columns>
+                                    <column key="ExpenseType" header-text="Expense Type" width="250px" data-type="string"></column>
+                                    <column key="Quantity" header-text="Quantity" width="250px" data-type="number"></column>
+                                    <column key="UnitCost" header-text="Units Cost" width="200px" data-type="string"></column>
+                                    <column key="TotalCost" header-text="Total Cost" width="100px" data-type="string"></column>
+                                    <column key="Delete" header-text="Action" width="100px" data-type="number" template="<input type ='button'value='Delete' ng-click='expense.deleteExpense()' />"></column>
+                                </columns>
+                            </ig-grid>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="panel panel-default">
+                <div class="panel-heading" style="font-size: 20px;padding: 10px;color: blue;">All Expenses <button style="float:right" type="button" id="overAllExportFull" class="btn btn-primary center-block" ng-click="expense.ExpenseToExcel()">Export All Expense</button></div>
+                <div class="panel-body">
+                    <ig-grid id="yearlyExpense" data-source="expense.yearlyData" data-source-type="json" width="100%" auto-commit="true" auto-generate-columns="false">
+                        <columns>
+                            <column key="ReportingMonth" header-text="Reporting Month" width="250px" data-type="string"></column>
+                            <column key="ExpenseType" header-text="Expense Type" width="200px" data-type="string"></column>
+                            <column key="Quantity" header-text="Quantity" width="200px" data-type="number"></column>
+                            <column key="UnitCost" header-text="Units Cost" width="200px" data-type="string"></column>
+                            <column key="TotalCost" header-text="Total Cost" width="100px" data-type="string"></column>
+                        </columns>
+                    </ig-grid>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
