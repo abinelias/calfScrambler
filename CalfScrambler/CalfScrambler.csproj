@@ -166,13 +166,19 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="CalfScramblerApp\CorrespondencePage\Correspondence.html" />
+    <Content Include="CalfScramblerApp\CorrespondencePage\CorrespondenceController.js" />
     <Content Include="CalfScramblerApp\CSS\Common.css" />
+    <Content Include="CalfScramblerApp\EssayPage\Essay.html" />
+    <Content Include="CalfScramblerApp\EssayPage\EssayController.js" />
     <Content Include="CalfScramblerApp\ExpensePage\Expense.html" />
     <Content Include="CalfScramblerApp\ExpensePage\ExpenseController.js" />
     <Content Include="CalfScramblerApp\HomePage\Home.html" />
     <Content Include="CalfScramblerApp\HomePage\HomeController.js" />
     <Content Include="CalfScramblerApp\HomePage\HomeService.js" />
     <Content Include="CalfScramblerApp\Scripts\Routing.js" />
+    <Content Include="CalfScramblerApp\SummaryPage\Summary.html" />
+    <Content Include="CalfScramblerApp\SummaryPage\SummaryController.js" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="favicon.ico" />
@@ -212,10 +218,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="CalfScramblerApp\CorrespondencePage\" />
     <Folder Include="CalfScramblerApp\Directives\" />
-    <Folder Include="CalfScramblerApp\EssayPage\" />
-    <Folder Include="CalfScramblerApp\SummaryPage\" />
     <Folder Include="Models\" />
   </ItemGroup>
   <ItemGroup>
@@ -251,7 +254,7 @@
     <VisualStudio>
       <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
         <WebProjectProperties>
-          <UseIIS>True</UseIIS>
+          <UseIIS>False</UseIIS>
           <AutoAssignPort>True</AutoAssignPort>
           <DevelopmentServerPort>60020</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>

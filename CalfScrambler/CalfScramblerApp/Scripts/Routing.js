@@ -12,6 +12,21 @@ calfScamblerApp.config(function ($routeProvider) {
             controller: 'ExpenseController',
             controllerAs: 'expense'
         })
+        .when('/correspondence', {
+            templateUrl: '/CalfScramblerApp/CorrespondencePage/Correspondence.html',
+            controller: 'CorrespondenceController',
+            controllerAs: 'corres'
+        })
+        .when('/essay', {
+            templateUrl: '/CalfScramblerApp/EssayPage/Essay.html',
+            controller: 'ExpenseController',
+            controllerAs: 'essay'
+        })
+        .when('/summary', {
+            templateUrl: '/CalfScramblerApp/SummaryPage/Summary.html',
+            controller: 'SummaryController',
+            controllerAs: 'summary'
+        })
         .otherwise({
             redirectTo: '/home'
         });
