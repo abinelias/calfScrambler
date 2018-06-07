@@ -1,4 +1,4 @@
-﻿var calfScamblerApp = angular.module("calfScamblerApp", ['ngRoute', 'igniteui-directives']);
+﻿var calfScamblerApp = angular.module("calfScamblerApp", ['ngRoute', 'igniteui-directives', 'ngStorage']);
 
 calfScamblerApp.config(function ($routeProvider, $locationProvider) {
     $locationProvider.html5Mode(true);
