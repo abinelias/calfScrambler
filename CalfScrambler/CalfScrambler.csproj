@@ -176,6 +176,9 @@
     <Content Include="CalfScramblerApp\HomePage\Home.html" />
     <Content Include="CalfScramblerApp\HomePage\HomeController.js" />
     <Content Include="CalfScramblerApp\HomePage\HomeService.js" />
+    <Content Include="CalfScramblerApp\Login\Login.html" />
+    <Content Include="CalfScramblerApp\Login\LoginController.js" />
+    <Content Include="CalfScramblerApp\Scripts\CommonService.js" />
     <Content Include="CalfScramblerApp\Scripts\Routing.js" />
     <Content Include="CalfScramblerApp\SummaryPage\Summary.html" />
     <Content Include="CalfScramblerApp\SummaryPage\SummaryController.js" />
