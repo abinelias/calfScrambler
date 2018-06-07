@@ -2,9 +2,9 @@
     angular.module('calfScamblerApp')
         .controller('LoginController', LoginController);
 
-    LoginController.$inject = ['$scope', 'CommonService'];
+    LoginController.$inject = ['$scope', '$location', 'CommonService'];
 
-    function LoginController($scope, CommonService) {
+    function LoginController($scope, $location, CommonService) {
         var vm = this;
         vm.LoggedInUserId;
 
@@ -12,8 +12,8 @@
         vm.Login = Login;
         
         function Login(){
-            CommonService.loggedInUserId = 1;
-            vm.LoggedInUserId = CommonService.loggedInUserId;
+            CommonService.SetLoggedInUserID();
+            $location.path("/home");
         }
     }
 })();

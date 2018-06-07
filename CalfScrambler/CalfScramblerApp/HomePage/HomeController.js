@@ -2,9 +2,9 @@
     angular.module('calfScamblerApp')
         .controller('myCtrl', myCtrl);
 
-    myCtrl.$inject = ['$scope', 'HomePageService'];
+    myCtrl.$inject = ['$scope', 'HomePageService', 'CommonService'];
 
-    function myCtrl($scope, HomePageService) {
+    function myCtrl($scope, HomePageService, CommonService) {
         var vm = this;
         vm.scramblerDetails;
         vm.selectedState = 0;

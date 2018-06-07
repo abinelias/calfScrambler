@@ -34,6 +34,6 @@ calfScamblerApp.config(function ($routeProvider, $locationProvider) {
             controllerAs: 'summary'
         })
         .otherwise({
-            redirectTo: '/home'
+            redirectTo: '/login'
         });
 });

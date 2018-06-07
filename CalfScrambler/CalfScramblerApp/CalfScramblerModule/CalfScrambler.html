@@ -1,0 +1,27 @@
+﻿<div class="container-fluid">
+    <div class="row">
+        <div ng-if="calf.LoggdInUsedId > 0" class="col-md-3">
+            <nav-bar></nav-bar>
+        </div>
+        <div ng-if="calf.LoggdInUsedId > 0" class="col-md-9">
+            <div class="row">
+                <div class="col-md-12" style="height: 75px;">
+                    <label style="margin-top: 15px;font-size: 27px;">Calf Scrambler App</label>
+                    <label style="float: right;margin-top: 24px;">Welcome Abin Abraham</label>
+                </div>
+            </div>
+            <div class="row">
+                <div class="panel panel-default">
+                    <div class="panel-body"><ng-view></ng-view></div>
+                </div>
+            </div>
+        </div>
+        <div ng-if="calf.LoggdInUsedId == 0" class="col-md-12">
+            <div class="row">
+                <div class="panel panel-default">
+                    <div class="panel-body"><ng-view></ng-view></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

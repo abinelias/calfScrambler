@@ -166,6 +166,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="CalfScramblerApp\CalfScramblerModule\CalfScrambler.html" />
+    <Content Include="CalfScramblerApp\CalfScramblerModule\CalfScramblerController.js" />
+    <Content Include="CalfScramblerApp\CalfScramblerModule\CalfScramblerDirective.js" />
     <Content Include="CalfScramblerApp\CorrespondencePage\Correspondence.html" />
     <Content Include="CalfScramblerApp\CorrespondencePage\CorrespondenceController.js" />
     <Content Include="CalfScramblerApp\CSS\Common.css" />
@@ -178,6 +181,9 @@
     <Content Include="CalfScramblerApp\HomePage\HomeService.js" />
     <Content Include="CalfScramblerApp\Login\Login.html" />
     <Content Include="CalfScramblerApp\Login\LoginController.js" />
+    <Content Include="CalfScramblerApp\NavBar\NavBar.html" />
+    <Content Include="CalfScramblerApp\NavBar\NavBarController.js" />
+    <Content Include="CalfScramblerApp\NavBar\NavBarDirective.js" />
     <Content Include="CalfScramblerApp\Scripts\CommonService.js" />
     <Content Include="CalfScramblerApp\Scripts\Routing.js" />
     <Content Include="CalfScramblerApp\SummaryPage\Summary.html" />
