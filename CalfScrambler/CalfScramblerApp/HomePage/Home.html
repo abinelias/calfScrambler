@@ -1,8 +1,8 @@
 ﻿<div class="container-fluid">
     <div class="row">
         <div class="col-md-12">
-            <div class="row">
-                <div class="panel panel-default" ng-if="!home.isEdit">
+            <div class="row"  ng-if="!home.isEdit">
+                <div class="panel panel-default">
                     <div class="panel-heading" style="padding: 12px;font-size: 20px;color: cornflowerblue;">
                         Scrambler Information
                         <button ng-click="home.EditInfo()" type="button" style="float:right" class=".btn-info">Edit</button>
@@ -19,27 +19,21 @@
                                 Address:
                             </div>
                             <div class="col-md-4 col-xs-4 col-sm-4" style="text-align:left; padding-left:10px;">
-                                {{home.address}}
+                                {{home.address}}{{home.city}}{{home.state}}{{home.zip}}
                             </div>
                         </div>
                         <div class="row" style="margin-bottom:10px;">
                             <div class="col-md-2 col-xs-2 col-sm-2" style="color: darkgoldenrod;">
-                                Animal:
+                                Email:
                             </div>
-                            <div class="col-md-2 col-xs-2 col-sm-2" style="text-align:left; padding-left:10px;">
-                                {{home.name}}
-                            </div>
-                            <div class="col-md-2 col-xs-2 col-sm-2" style="color: darkgoldenrod;">
-                                Breed:
-                            </div>
-                            <div class="col-md-2 col-xs-2 col-sm-2" style="text-align:left; padding-left:10px;">
-                                {{home.address}}
+                            <div class="col-md-4 col-xs-4 col-sm-4" style="text-align:left; padding-left:10px;">
+                                {{home.email}}
                             </div>
                             <div class="col-md-2 col-xs-2 col-sm-2" style="color: darkgoldenrod;">
-                                Birth Date:
+                                Secondary Email:
                             </div>
-                            <div class="col-md-2 col-xs-2 col-sm-2" style="text-align:left; padding-left:10px;">
-                                {{home.address}}
+                            <div class="col-md-4 col-xs-4 col-sm-4" style="text-align:left; padding-left:10px;">
+                                {{home.secondaryEmail}}
                             </div>
                         </div>
                         <div class="row" style="margin-bottom:10px;">
@@ -64,6 +58,152 @@
                                 {{home.ceaESTEmail}}
                             </div>
                         </div>
+                    </div>
+                </div>
+                <div class="panel panel-default" ng-if="!home.isEdit">
+                    <div class="panel-heading" style="padding: 12px;font-size: 20px;color: cornflowerblue;">
+                        Additional Information
+                        <button ng-click="home.EditInfo()" type="button" style="float:right" class=".btn-info">Edit</button>
+                    </div>
+                    <div ng-if="home.selectedAnimalType == 0" class="panel-body">
+                        <div class="row" style="margin-bottom:10px;">
+                            <div class="col-md-2 col-xs-2 col-sm-2" style="color: darkgoldenrod;">
+                                Animal Type:
+                            </div>
+                            <div class="col-md-4 col-xs-4 col-sm-4" style="text-align:left; padding-left:10px;">
+                                {{home.AnimalType}}
+                            </div>
+                            <div class="col-md-2 col-xs-2 col-sm-2" style="color: darkgoldenrod;">
+                                Animal:
+                            </div>
+                            <div class="col-md-4 col-xs-4 col-sm-4" style="text-align:left; padding-left:10px;">
+                                {{home.Animal}}
+                            </div>
+                        </div>
+                        <div class="row" style="margin-bottom:10px;">
+                            <div class="col-md-2 col-xs-2 col-sm-2" style="color: darkgoldenrod;">
+                                Registry Number:
+                            </div>
+                            <div class="col-md-4 col-xs-4 col-sm-4" style="text-align:left; padding-left:10px;">
+                                {{home.RegistryNumber}}
+                            </div>
+                            <div class="col-md-2 col-xs-2 col-sm-2" style="color: darkgoldenrod;">
+                                Date of Birth:
+                            </div>
+                            <div class="col-md-4 col-xs-4 col-sm-4" style="text-align:left; padding-left:10px;">
+                                {{home.DOB}}
+                            </div>
+                        </div>
+                        <div class="row" style="margin-bottom:10px;">
+                            <div class="col-md-2 col-xs-2 col-sm-2" style="color: darkgoldenrod;">
+                                Name of size:
+                            </div>
+                            <div class="col-md-4 col-xs-4 col-sm-4" style="text-align:left; padding-left:10px;">
+                                {{home.NameOfSize}}
+                            </div>
+                            <div class="col-md-2 col-xs-2 col-sm-2" style="color: darkgoldenrod;">
+                                Size Registry Number:
+                            </div>
+                            <div class="col-md-4 col-xs-4 col-sm-4" style="text-align:left; padding-left:10px;">
+                                {{home.SizeRegistryNum}}
+                            </div>
+                        </div>
+                        <div class="row" style="margin-bottom:10px;">
+                            <div class="col-md-2 col-xs-2 col-sm-2" style="color: darkgoldenrod;">
+                                Name of Dam:
+                            </div>
+                            <div class="col-md-4 col-xs-4 col-sm-4" style="text-align:left; padding-left:10px;">
+                                {{home.NameofDam}}
+                            </div>
+                            <div class="col-md-2 col-xs-2 col-sm-2" style="color: darkgoldenrod;">
+                                Dam Registry Num:
+                            </div>
+                            <div class="col-md-4 col-xs-4 col-sm-4" style="text-align:left; padding-left:10px;">
+                                {{home.DamRegistryNum}}
+                            </div>
+                        </div>
+                        <div class="row" style="margin-bottom:10px;">
+                            <div class="col-md-2 col-xs-2 col-sm-2" style="color: darkgoldenrod;">
+                                Breed:
+                            </div>
+                            <div class="col-md-4 col-xs-4 col-sm-4" style="text-align:left; padding-left:10px;">
+                                {{home.Breed}}
+                            </div>
+                            <div class="col-md-2 col-xs-2 col-sm-2" style="color: darkgoldenrod;">
+                                Animal ID:
+                            </div>
+                            <div class="col-md-4 col-xs-4 col-sm-4" style="text-align:left; padding-left:10px;">
+                                {{home.AnimalID}}
+                            </div>
+                        </div>
+                        <div class="row" style="margin-bottom:10px;">
+                            <div class="col-md-2 col-xs-2 col-sm-2" style="color: darkgoldenrod;">
+                                Sellar:
+                            </div>
+                            <div class="col-md-4 col-xs-4 col-sm-4" style="text-align:left; padding-left:10px;">
+                                {{home.Sellar}}
+                            </div>
+                            <div class="col-md-2 col-xs-2 col-sm-2" style="color: darkgoldenrod;">
+                                Purchase Date:
+                            </div>
+                            <div class="col-md-4 col-xs-4 col-sm-4" style="text-align:left; padding-left:10px;">
+                                {{home.PurchaseDate}}
+                            </div>
+                        </div>
+                        <div class="row" style="margin-bottom:10px;">
+                            <div class="col-md-2 col-xs-2 col-sm-2" style="color: darkgoldenrod;">
+                                Total Animal Cost:
+                            </div>
+                            <div class="col-md-4 col-xs-4 col-sm-4" style="text-align:left; padding-left:10px;">
+                                {{home.TotalAnimalCost}}
+                            </div>
+                        </div>
+                    </div>
+                    <div ng-if="home.selectedAnimalType == 2" class="panel-body">
+                            <div class="row" style="margin-bottom:10px;">
+                                <div class="col-md-2 col-xs-2 col-sm-2" style="color: darkgoldenrod;">
+                                    Animal Type:
+                                </div>
+                                <div class="col-md-4 col-xs-4 col-sm-4" style="text-align:left; padding-left:10px;">
+                                    {{home.AnimalType}}
+                                </div>
+                                <div class="col-md-2 col-xs-2 col-sm-2" style="color: darkgoldenrod;">
+                                    Validation Tag:
+                                </div>
+                                <div class="col-md-4 col-xs-4 col-sm-4" style="text-align:left; padding-left:10px;">
+                                    {{home.ValidationTag}}
+                                </div>
+                            </div>
+                            <div class="row" style="margin-bottom:10px;">
+                                <div class="col-md-2 col-xs-2 col-sm-2" style="color: darkgoldenrod;">
+                                    Sellar Name:
+                                </div>
+                                <div class="col-md-4 col-xs-4 col-sm-4" style="text-align:left; padding-left:10px;">
+                                    {{home.Sellarname}}
+                                </div>
+                                <div class="col-md-2 col-xs-2 col-sm-2" style="color: darkgoldenrod;">
+                                    Purchase Date:
+                                </div>
+                                <div class="col-md-4 col-xs-4 col-sm-4" style="text-align:left; padding-left:10px;">
+                                    {{home.PurchaseDate}}
+                                </div>
+                            </div>
+                            <div class="row" style="margin-bottom:10px;">
+                                <div class="col-md-2 col-xs-2 col-sm-2" style="color: darkgoldenrod;">
+                                    Cost:
+                                </div>
+                                <div class="col-md-4 col-xs-4 col-sm-4" style="text-align:left; padding-left:10px;">
+                                    {{home.Cost}}
+                                </div>
+                            </div>
+                        </div>
+                </div>
+                <div class="panel panel-default" ng-if="!home.isEdit">
+                    <div class="panel-heading" style="padding: 12px;font-size: 20px;color: cornflowerblue;">
+                        Donor Information & Progress
+                        <button ng-click="home.EditInfo()" type="button" style="float:right" class=".btn-info">Edit</button>
+                    </div>
+                    <div class="panel-body">                        
                         <div class="row" style="margin-bottom:10px;">
                             <div class="col-md-2 col-xs-2 col-sm-2" style="color: darkgoldenrod;">
                                 Donor:
@@ -80,22 +220,16 @@
                         </div>
                         <div class="row" style="margin-bottom:10px;">
                             <div class="col-md-2 col-xs-2 col-sm-2" style="color: darkgoldenrod;">
-                                Seller:
+                                Attending Show:
                             </div>
                             <div class="col-md-2 col-xs-2 col-sm-2" style="text-align:left; padding-left:10px;">
-                                {{home.name}}
+                                {{home.isAttendingShow}}
                             </div>
                             <div class="col-md-2 col-xs-2 col-sm-2" style="color: darkgoldenrod;">
-                                Purchase Date:
+                                T-shirt Size:
                             </div>
                             <div class="col-md-2 col-xs-2 col-sm-2" style="text-align:left; padding-left:10px;">
-                                {{home.address}}
-                            </div>
-                            <div class="col-md-2 col-xs-2 col-sm-2" style="color: darkgoldenrod;">
-                                Total Animal Cost:
-                            </div>
-                            <div class="col-md-2 col-xs-2 col-sm-2" style="text-align:left; padding-left:10px;">
-                                {{home.address}}
+                                {{home.shirtSize}}
                             </div>
                         </div>
                     </div>
