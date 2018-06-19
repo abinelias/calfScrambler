@@ -171,6 +171,7 @@
     <Content Include="CalfScramblerApp\CalfScramblerModule\CalfScramblerDirective.js" />
     <Content Include="CalfScramblerApp\CorrespondencePage\Correspondence.html" />
     <Content Include="CalfScramblerApp\CorrespondencePage\CorrespondenceController.js" />
+    <Content Include="CalfScramblerApp\CorrespondencePage\CorrespondenceService.js" />
     <Content Include="CalfScramblerApp\CSS\Common.css" />
     <Content Include="CalfScramblerApp\EssayPage\Essay.html" />
     <Content Include="CalfScramblerApp\EssayPage\EssayController.js" />

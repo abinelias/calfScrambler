@@ -2,9 +2,9 @@
     angular.module('calfScamblerApp')
         .controller('CorrespondenceController', CorrespondenceController);
 
-    CorrespondenceController.$inject = ['$scope'];
+    CorrespondenceController.$inject = ['$scope', 'CorrespondenceService'];
 
-    function CorrespondenceController($scope) {
+    function CorrespondenceController($scope, CorrespondenceService) {
         var vm = this;
         vm.startDate = "Abin";
         vm.endDate = "Abraham";
@@ -18,7 +18,11 @@
 
             r.onloadend = function (e) {
                 var data = e.target.result;
-                console.log(data);
+                CorrespondenceService.SavePdf(f).then(function (res) {
+                    //vm.scramblerDetails = res.data;
+                    //vm.name = vm.scramblerDetails.FIRST_NAME + vm.scramblerDetails.LAST_NAME;
+                    //console.log(vm.scramblerDetails);
+                });
                 //send your binary data via $http or $resource or do anything else with it
             }
 

@@ -8,7 +8,7 @@
         var vm = this;
         vm.scramblerDetails;
         vm.selectedState = 0;
-        vm.isEdit = false;
+        vm.isEdit = true;
         vm.state = [{ "Id": 0, "Name": "Select State" }, { "Id": 1, "Name": "Florida" }, { "Id": 2, "Name": "Californai" }, { "Id": 3, "Name": "Alaska" }, { "Id": 4, "Name": "Maryland" }, { "Id": 5, "Name": "Newyork" }, { "Id": 6, "Name": "Ohio" }, { "Id": 7, "Name": "Tennessee" }, { "Id": 8, "Name": "Texas" }, { "Id": 9, "Name": "Virgina" }, { "Id": 10, "Name": "Washington" }];
         vm.selectedBreed = 0;
         vm.breed = [{ "Id": 0, "Name": "Select Breed" }, { "Id": 1, "Name": "BreedA" }, { "Id": 2, "Name": "BreedB" }];
@@ -77,7 +77,7 @@
         }
 
         function Save() {
-            vm.isEdit = false;
+            vm.isEdit = true;
         }
     }
 })();
