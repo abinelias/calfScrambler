@@ -2,18 +2,17 @@
     angular.module('calfScamblerApp')
         .controller('ExpenseController', ExpenseController);
 
-    ExpenseController.$inject = ['$scope'];
+    ExpenseController.$inject = ['$scope', 'ExpenseService', '$localStorage', '$sessionStorage'];
 
-    function ExpenseController($scope) {
+    function ExpenseController($scope, ExpenseService, $localStorage, $sessionStorage) {
         var vm = this;
-        vm.firstName = "Abin";
-        vm.lastName = "Abraham";
         vm.selectedQuanity = 0;
         vm.expenseType = '';
+        vm.expenseDetails = {};
         vm.unitCost;
-        vm.AddNewExpense = false;
-        vm.monthlyData = [{ "Id": 1, "ExpenseType": "Feed", "Quantity": 10, "UnitCost": "$30", "TotalCost": "$300" }, { "Id": 2, "ExpenseType": "Medicine", "Quantity": 10, "UnitCost": "$30", "TotalCost": "$300" }, { "Id": 3, "ExpenseType": "Food", "Quantity": 10, "UnitCost": "$30", "TotalCost": "$300" }];
-        vm.yearlyData =  [{ "ReportingMonth": "May", "ExpenseType": "Feed", "Quantity": 10, "UnitCost": "$30", "TotalCost": "$300" }];
+        vm.AddNewExpense = true;
+        vm.monthlyData = [];
+        vm.yearlyData =  [];
         vm.quantity = [{ "Id": 0, "Name": "Select Quantity"}, { "Id": 1, "Name": 1 }, { "Id": 2, "Name": 2 }, { "Id": 3, "Name": 3 }, { "Id": 4, "Name": 4 }, { "Id": 5, "Name": 5 }, { "Id": 6, "Name": 6 }, { "Id": 7, "Name": 7 }, { "Id": 8, "Name": 8 }, { "Id": 9, "Name": 9 }, { "Id": 10, "Name": 10 }]
 
         // Functions defined on vm
@@ -23,6 +22,34 @@
         vm.saveExpense = saveExpense;
         vm.cancelExpense = cancelExpense;
         vm.deleteExpense = deleteExpense;
+        vm.InitalizeData = InitalizeData;
+
+        InitalizeData();
+
+        function InitalizeData() {
+            ExpenseService.GetExpense().then(function (res) {
+                vm.expenseDetails = res.data;
+                for (var i = 0; i < vm.expenseDetails.length; i++) {
+                    if ($localStorage.month == vm.expenseDetails[i].month) {
+                        var monthInfo = {};
+                        monthInfo.expenseid = vm.expenseDetails[i].expenseid;
+                        monthInfo.expensetype = vm.expenseDetails[i].expensetype;
+                        monthInfo.quantity = vm.expenseDetails[i].quantity;
+                        monthInfo.unitcost = vm.expenseDetails[i].unitcost;
+                        monthInfo.totalCost = parseInt(vm.expenseDetails[i].unitcost) * parseInt(vm.expenseDetails[i].quantity);
+                        vm.monthlyData.push(monthInfo);
+                    }
+                    var yearInfo = {};
+                    yearInfo.expenseid = vm.expenseDetails[i].expenseid;
+                    yearInfo.month = vm.expenseDetails[i].month;
+                    yearInfo.expensetype = vm.expenseDetails[i].expensetype;
+                    yearInfo.quantity = vm.expenseDetails[i].quantity;
+                    yearInfo.unitcost = vm.expenseDetails[i].unitcost;
+                    yearInfo.totalCost = parseInt(vm.expenseDetails[i].unitcost) * parseInt(vm.expenseDetails[i].quantity);
+                    vm.yearlyData.push(yearInfo);
+                }
+            });
+        }
 
         function AddExpense() {
             vm.AddNewExpense = true;
@@ -34,15 +61,24 @@
 
         function saveExpense() {
             var data = {};
-            data.ExpenseType = vm.expenseType;
-            data.Quantity = vm.selectedQuanity;
-            data.UnitCost = vm.unitCost;
-            data.TotalCost = parseInt(vm.unitCost) * parseInt(vm.selectedQuanity);
-            vm.monthlyData.push(data);
+            data.expensetype = vm.expenseType;
+            data.quantity = vm.selectedQuanity;
+            data.unitcost = vm.unitCost;
+            data.year = 2018;
+            data.customerid = 1;
+            data.month = $localStorage.month;
             vm.selectedQuanity = 0;
             vm.expenseType = '';
             vm.unitCost = '';
-            vm.AddNewExpense = false;
+            vm.AddNewExpense = true;
+
+            ExpenseService.AddExpense(data).then(function (res) {
+                if (res.data) {
+                    vm.monthlyData = [];
+                    vm.yearlyData = [];
+                    InitalizeData();
+                }
+            });
         }
 
         function cancelExpense() {

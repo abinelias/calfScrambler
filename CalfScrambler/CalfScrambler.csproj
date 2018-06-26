@@ -159,10 +159,12 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\CalfScramblerApiController.cs" />
+    <Compile Include="Controllers\ExpenseController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\CustomerInfo.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -177,6 +179,7 @@
     <Content Include="CalfScramblerApp\EssayPage\EssayController.js" />
     <Content Include="CalfScramblerApp\ExpensePage\Expense.html" />
     <Content Include="CalfScramblerApp\ExpensePage\ExpenseController.js" />
+    <Content Include="CalfScramblerApp\ExpensePage\ExpenseService.js" />
     <Content Include="CalfScramblerApp\HomePage\Home.html" />
     <Content Include="CalfScramblerApp\HomePage\HomeController.js" />
     <Content Include="CalfScramblerApp\HomePage\HomeService.js" />
@@ -211,6 +214,8 @@
     <Content Include="Scripts\modernizr-2.6.2.js" />
     <Content Include="Scripts\respond.js" />
     <Content Include="Scripts\respond.min.js" />
+    <Content Include="Scripts\UIScripts\jquery-1.9.1.js" />
+    <Content Include="Scripts\UIScripts\jqueryUIMin.js" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -225,11 +230,11 @@
     <Content Include="Views\Home\About.cshtml" />
     <Content Include="Views\Home\Contact.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Scripts\UIScripts\modernizer-2.8.3.js" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="CalfScramblerApp\Directives\" />
-    <Folder Include="Models\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />

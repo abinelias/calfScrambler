@@ -9,7 +9,8 @@
         vm.scramblerDetails;
         vm.selectedState = 0;
         vm.isEdit = true;
-        vm.state = [{ "Id": 0, "Name": "Select State" }, { "Id": 1, "Name": "Florida" }, { "Id": 2, "Name": "Californai" }, { "Id": 3, "Name": "Alaska" }, { "Id": 4, "Name": "Maryland" }, { "Id": 5, "Name": "Newyork" }, { "Id": 6, "Name": "Ohio" }, { "Id": 7, "Name": "Tennessee" }, { "Id": 8, "Name": "Texas" }, { "Id": 9, "Name": "Virgina" }, { "Id": 10, "Name": "Washington" }];
+        vm.monthDetails = '';
+        vm.states = [{ "Id": 0, "Name": "Select State" }, { "Id": 1, "Name": "Florida" }, { "Id": 2, "Name": "Californai" }, { "Id": 3, "Name": "Alaska" }, { "Id": 4, "Name": "Maryland" }, { "Id": 5, "Name": "Newyork" }, { "Id": 6, "Name": "Ohio" }, { "Id": 7, "Name": "Tennessee" }, { "Id": 8, "Name": "Texas" }, { "Id": 9, "Name": "Virgina" }, { "Id": 10, "Name": "Washington" }];
         vm.selectedBreed = 0;
         vm.breed = [{ "Id": 0, "Name": "Select Breed" }, { "Id": 1, "Name": "BreedA" }, { "Id": 2, "Name": "BreedB" }];
         vm.selectedAnimalType = 0;
@@ -23,7 +24,7 @@
         vm.name = 'Abin Abraham';
         vm.address = 'NO:8 illom Blocks';
         vm.city = "Kochi";
-        vm.state = vm.state[vm.selectedState].Name;
+        vm.state = vm.states[vm.selectedState].Name;
         vm.zip = "689541";
         vm.email = "abinelias@yahoo.com";
         vm.secondaryEmail = "ajaynath@gmail.com";
@@ -65,11 +66,13 @@
         GetScramblerDetails();
 
         function GetScramblerDetails() {
-            //HomePageService.GetScramblerDetails().then(function (res) {
-            //    vm.scramblerDetails = res.data;
-            //    vm.name = vm.scramblerDetails.FIRST_NAME + vm.scramblerDetails.LAST_NAME;
-            //    console.log(vm.scramblerDetails);
-            //});
+            HomePageService.GetScramblerDetails().then(function (res) {
+                vm.scramblerDetails = res.data;
+                vm.name = vm.scramblerDetails.FIRST_NAME + vm.scramblerDetails.LAST_NAME;
+            });
+            HomePageService.GetCurrentMonth().then(function (res) {
+                vm.monthDetails = res.data;
+            });
         }
 
         function EditInfo() {

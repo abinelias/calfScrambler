@@ -1,11 +1,12 @@
 ﻿angular.module('calfScamblerApp')
     .factory('HomePageService', HomePageService);
 
-HomePageService.$inject = ['$http', '$q'];
-function HomePageService($http, $q) {
+HomePageService.$inject = ['$http', '$q', '$localStorage', '$sessionStorage'];
+function HomePageService($http, $q, $localStorage, $sessionStorage) {
     var baseWMUrl = '/api/CalfScramblerApi/';
 	var homeAPI = {
-        GetScramblerDetails: GetScramblerDetails
+        GetScramblerDetails: GetScramblerDetails,
+        GetCurrentMonth: GetCurrentMonth
 	};
 
     return homeAPI;
@@ -17,5 +18,14 @@ function HomePageService($http, $q) {
 			return result;
 		}));
 		return deferred.promise;
-	}
+    }
+
+    function GetCurrentMonth() {
+        var deferred = $q.defer();
+        deferred.resolve($http.get(baseWMUrl + 'GetCurrentMonth').then(function (result) {
+            $localStorage.month = result.data;
+            return result;
+        }));
+        return deferred.promise;
+    }
 };

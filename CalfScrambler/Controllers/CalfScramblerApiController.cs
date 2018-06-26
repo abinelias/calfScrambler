@@ -1,5 +1,8 @@
-﻿using Repository;
+﻿using CalfScrambler.Models;
+using Repository;
+using System.Collections.Generic;
 using System.Web;
+using System.Web.Configuration;
 using System.Web.Http;
 
 namespace CalfScrambler.Controllers
@@ -11,22 +14,34 @@ namespace CalfScrambler.Controllers
         {
             db = new RepositoryCalfScrample();
         }
-        [Route("GetCustomerId")]
+
+        /// [Route("GetCustomerId")]
         [System.Web.Http.HttpPost]
-        public customer GetCustomerId(int id)
+        public CustomerInfo GetCustomerId(int id)
         {
-            return db.GetCustomerById(id);
+            return new CustomerInfo
+            {
+                cutomer = db.GetCustomerById(id),
+                address = db.GetAddressById(id)
+
+            };
         }
+
         [System.Web.Http.HttpPost]
         public bool UploadTest()
         {
-          //  var httpPostedFile = HttpContext.Current.Request.Files["file"];                                                 // this is not working
-
-              var httpPostedFile = HttpContext.Current.Request.Files["filesample"];
-            //  var fileName = httpPostedFile.FileName;
+            var httpPostedFile = HttpContext.Current.Request.Files["filesample"];
             return true;
-
-
         }
+
+        ////  [Route("GetCurrentMonth")]
+        [System.Web.Http.HttpGet]
+        public string GetCurrentMonth()
+        {
+            string month = WebConfigurationManager.AppSettings["Month"];
+            return month;
+        }
+
+       
     }
 }

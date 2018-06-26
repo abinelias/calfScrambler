@@ -243,36 +243,35 @@
                             <tbody>
                                 <tr>
                                     <td style="text-align:right">Name:</td>
-                                    <td><input type="text" class="form-control" ng-model="home.scramblerDetails.FIRST_NAME" style="padding-left:20px;" /></td>
+                                    <td><input type="text" class="form-control" ng-model="home.scramblerDetails.cutomer.FIRST_NAME" style="padding-left:20px;" /></td>
                                     <td style="text-align:right">Email:</td>
-                                    <td><input type="text" class="form-control" style="padding-left:20px" /></td>
+                                    <td><input ng-model="home.scramblerDetails.address.EMAIL" type="text" class="form-control" style="padding-left:20px" /></td>
                                 </tr>
                                 <tr>
                                     <td style="text-align:right">Address:</td>
-                                    <td><input type="text" class="form-control" style="padding-left:20px" /></td>
+                                    <td><input ng-model="home.scramblerDetails.address.ADDRESS1" type="text" class="form-control" style="padding-left:20px" /></td>
                                     <td style="text-align:right">Secondary Email:</td>
-                                    <td><input type="text" class="form-control" style="padding-left:20px" /></td>
+                                    <td><input ng-model="home.scramblerDetails.address.EMAIL_SECOND" type="text" class="form-control" style="padding-left:20px" /></td>
                                 </tr>
                                 <tr>
                                     <td style="text-align:right">City:</td>
-                                    <td><input type="text" class="form-control" style="padding-left:20px" /></td>
+                                    <td><input ng-model="home.scramblerDetails.address.CITY" type="text" class="form-control" style="padding-left:20px" /></td>
                                     <td style="text-align:right">Chapter:</td>
-                                    <td><input type="text" class="form-control" style="padding-left:20px" /></td>
+                                    <td><input ng-model="home.scramblerDetails.address.EMAIL" type="text" class="form-control" style="padding-left:20px" /></td>
                                 </tr>
                                 <tr>
                                     <td style="text-align:right">State:</td>
                                     <td>
-
-                                        <select style="padding-left:20px;" class="form-control" ng-model="home.selectedState" ng-options="state.Id as state.Name for state in home.state"></select>
+                                        <select style="padding-left:20px;" class="form-control" ng-model="home.selectedAnimalType" ng-options="animalType.Id as animalType.Name for animalType in home.states"></select>
                                     </td>
                                     <td style="text-align:right">CEA or AST:</td>
-                                    <td><input type="text" class="form-control" style="padding-left:20px" /></td>
+                                    <td><input ng-model="home.scramblerDetails.address.EMAIL" type="text" class="form-control" style="padding-left:20px" /></td>
                                 </tr>
                                 <tr>
                                     <td style="text-align:right">ZIP:</td>
-                                    <td><input type="text" class="form-control" style="padding-left:20px" /></td>
+                                    <td><input ng-model="home.scramblerDetails.address.POSTAL" type="text" class="form-control" style="padding-left:20px" /></td>
                                     <td style="text-align:right">CEA or AST Email:</td>
-                                    <td><input type="text" class="form-control" style="padding-left:20px" /></td>
+                                    <td><input ng-model="home.scramblerDetails.address.EMAIL" type="text" class="form-control" style="padding-left:20px" /></td>
                                 </tr>
                             </tbody>
                         </table>
@@ -291,11 +290,11 @@
                                 </tr>
                                 <tr ng-if="home.selectedAnimalType == 1">
                                     <td style="text-align:right">Animal:</td>
-                                    <td><input type="text" class="form-control" style="padding-left:20px; padding-right:100px" /></td>
+                                    <td><input ng-model="home.scramblerDetails.address.EMAIL" type="text" class="form-control" style="padding-left:20px; padding-right:100px" /></td>
                                 </tr>
                                 <tr ng-if="home.selectedAnimalType == 1">
                                     <td style="text-align:right">Registry #:</td>
-                                    <td><input type="text" class="form-control" style="padding-left:20px; padding-right:100px" /></td>
+                                    <td><input ng-model="home.scramblerDetails.address.EMAIL" type="text" class="form-control" style="padding-left:20px; padding-right:100px" /></td>
                                 </tr>
                                 <tr ng-if="home.selectedAnimalType == 1">
                                     <td style="text-align:right">Date of Birth:</td>
